@@ -1,0 +1,13 @@
+name: Keep Hugging Face Space Alive
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Space
+       run: curl -sSf https://huggingface.co/spaces/junaid-ahmed-456/AI_Study_Companion_v2/ > /dev/null || true
